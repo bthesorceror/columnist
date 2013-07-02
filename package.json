@@ -1,0 +1,17 @@
+{
+  "name": "columnist",
+  "version": "0.0.1",
+  "description": "Parses out comma seperated text",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "keywords": [
+    "csv",
+    "text-parsing"
+  ],
+  "author": "Brandon Farmer",
+  "license": "BSD",
+  "readmeFilename": "README.md"
+}
