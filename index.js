@@ -38,8 +38,9 @@ Columnist.prototype.isInt = function(val) {
 }
 
 Columnist.prototype.sanitize = function(text) {
+  text = text.trim();
   var result = text.replace(/\r/g, "");
-  if (this.removeQuotes) { result = result.replace(/"/g, ""); }
+  if (this.removeQuotes) { result = result.replace(/["']/g, ""); }
   return result;
 }
 
