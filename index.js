@@ -1,9 +1,21 @@
+function mergeOptions(options) {
+  var defaults = { ignore_first: false,
+                    ignore_last: false,
+                  remove_quotes: true }
+  options = options || {};
+  Object.keys(defaults).forEach(function(key) {
+    if (options[key] === undefined) {
+      options[key] = defaults[key];
+    }
+  });
+  return options;
+}
 function Columnist(columns, options) {
-  options           = options || {};
+  options           = mergeOptions(options);
   this.columns      = columns;
-  this.ignoreFirst  = options['ignore_first'] || false;
-  this.ignoreLast   = options['ignore_last'] || true;
-  this.removeQuotes = options['remove_quotes'] || true;
+  this.ignoreFirst  = options['ignore_first'];
+  this.ignoreLast   = options['ignore_last'];
+  this.removeQuotes = options['remove_quotes'];
 }
 
 Columnist.prototype.convert = function(val) {
