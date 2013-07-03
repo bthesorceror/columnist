@@ -18,8 +18,19 @@ function Columnist(columns, options) {
   this.removeQuotes = options['remove_quotes'];
 }
 
+Columnist.prototype.sanitizeQuotes = function(val) {
+  if (this.removeQuotes) {
+    if (val[0] == val[val.length - 1] && (val[0] == "'" || val[0] == '"')) {
+      if (val.length <= 2) return "";
+      else return val.substring(1, val.length - 1);
+    }
+  }
+  return val;
+}
+
 Columnist.prototype.convert = function(val) {
   val = val.trim();
+  val = this.sanitizeQuotes(val);
   if (this.isFloat(val)) {
     return parseFloat(val);
   } else if (this.isInt(val)) {
@@ -40,7 +51,6 @@ Columnist.prototype.isInt = function(val) {
 Columnist.prototype.sanitize = function(text) {
   text = text.trim();
   var result = text.replace(/\r/g, "");
-  if (this.removeQuotes) { result = result.replace(/["]/g, ""); }
   return result;
 }
 

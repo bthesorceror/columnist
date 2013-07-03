@@ -11,8 +11,8 @@ tape("parses correctly", function(t) {
 
   var person = columnist.parse(fixture)[0];
 
-  t.equals(person.first, 'brandon');
-  t.equals(person.last, "'farmer'");
+  t.equals(person.first, 'bran"do"n');
+  t.equals(person.last, "farmer's");
   t.equals(person.age, 30);
   t.equals(person.gpa, 3.5);
 });
@@ -66,8 +66,8 @@ tape("leaves quotes by option", function(t) {
 
   var person = columnist.parse(fixture)[0];
 
-  t.equals(person.first, '"brandon"');
-  t.equals(person.last, "'farmer'");
+  t.equals(person.first, '"bran"do"n"');
+  t.equals(person.last, "'farmer's'");
   t.equals(person.age, 30);
   t.equals(person.gpa, 3.5);
 });
