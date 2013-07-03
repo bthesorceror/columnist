@@ -57,7 +57,7 @@ Columnist.prototype.processLine = function(line) {
 }
 
 Columnist.prototype.shouldIgnore = function(index, lines) {
-  return (index == 0 && this.ignoreFirst) || index == (lines.length - 1);
+  return (index == 0 && this.ignoreFirst) || (index == (lines.length - 1) && this.ignoreLast);
 }
 
 Columnist.prototype.parse = function(text) {
@@ -67,7 +67,7 @@ Columnist.prototype.parse = function(text) {
 
   lines.forEach(function(line, index) {
     if (self.shouldIgnore(index, lines)) return;
-    results.unshift(self.processLine(line));
+    results.push(self.processLine(line));
   });
 
   return results;
