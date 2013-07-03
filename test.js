@@ -12,7 +12,7 @@ tape("parses correctly", function(t) {
   var person = columnist.parse(fixture)[0];
 
   t.equals(person.first, 'brandon');
-  t.equals(person.last, 'farmer');
+  t.equals(person.last, "'farmer'");
   t.equals(person.age, 30);
   t.equals(person.gpa, 3.5);
 });
