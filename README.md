@@ -1,6 +1,8 @@
 Columnist
 ==========
 
+[![Build Status](https://travis-ci.org/bthesorceror/columnist.png?branch=master)](https://travis-ci.org/bthesorceror/columnist)
+
 A node module for parsing out csv documents to an array of object literals as
 well as attempts to parse data into the numbers when possible
 
