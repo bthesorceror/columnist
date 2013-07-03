@@ -19,6 +19,7 @@ function Columnist(columns, options) {
 }
 
 Columnist.prototype.convert = function(val) {
+  val = val.trim();
   if (this.isFloat(val)) {
     return parseFloat(val);
   } else if (this.isInt(val)) {
