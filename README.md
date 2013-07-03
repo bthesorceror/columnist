@@ -12,7 +12,7 @@ Example
 test.csv
 
 ```
-"brandon", 'farmer', 30, 3.5
+"brandon", "farmer", 30, 3.5
 john, smith, 45, 4.0
 tom, jones, 65, 2.5
 ```
